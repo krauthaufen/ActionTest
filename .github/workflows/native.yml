@@ -62,6 +62,9 @@ jobs:
         with:
           name: windows
           path: libs/Native/
+      - name: show libs
+        shell: sh
+        run: ls -R libs
       - name: Restore Tools
         shell: cmd
         run: dotnet tool restore
