@@ -44,7 +44,7 @@ jobs:
       - mac
       - windows
       - linux
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name: Download OSX dependencies
@@ -65,12 +65,15 @@ jobs:
       - name: Show native things
         shell: sh
         run: find libs
+      - name: print secret
+        shell: sh
+        run: echo $NUGET_KEY
       - name: Build
         shell: sh
         run: dotnet build -c Release
       - name: Publish
         shell: sh
-        run: dotnet pack -c Release -o bin/pack
+        run: dotnet pack -c Release -o bin\pack
       - name: Upload Package
         uses: actions/upload-artifact@v2
         with:
