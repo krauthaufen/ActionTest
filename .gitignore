@@ -2,3 +2,4 @@
 /libs
 obj/
 .DS_Store
+/paket-files
