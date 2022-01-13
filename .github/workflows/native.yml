@@ -1,0 +1,64 @@
+name: Build Native Dependencies
+on: [push]
+
+
+jobs:
+  mac:
+    name: Build OSX dependencies
+    runs-on: macOS-latest
+    steps:
+      - name: Build Native Libraries
+        shell: sh
+        run: ./buildnative.sh
+      - name: Upload OSX native libs
+        uses: actions/upload-artifact@v2
+        with:
+          name: osx
+          path: libs/Native/mac/
+  linux:
+    name: Build Linux dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Native Libraries
+        shell: sh
+        run: ./buildnative.sh
+      - name: Upload Linux native libs
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux
+          path: libs/Native/linux/
+  windows:
+    name: Build Windows dependencies
+    runs-on: windows-latest
+    steps:
+      - name: Build Native Libraries
+        shell: cmd.exe
+        run: buildnative.cmd
+      - name: Upload Windows native libs
+        uses: actions/upload-artifact@v2
+        with:
+          name: windows
+          path: libs/Native/windows/
+  final:
+    name: "Build Package"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download OSX dependencies
+        uses: actions/download-artifact@v2
+        with:
+          name: osx
+      - name: Download Linux dependencies
+        uses: actions/download-artifact@v2
+        with:
+          name: linux
+      - name: Download Windows dependencies
+        uses: actions/download-artifact@v2
+        with:
+          name: windows
+      - name: BuildPackage
+        shell: sh
+        run dotnet build
+      - name: Show native things
+        shell: sh
+        find libs
+      
