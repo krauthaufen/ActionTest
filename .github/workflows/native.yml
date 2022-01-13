@@ -62,12 +62,9 @@ jobs:
         with:
           name: windows
           path: libs/Native/
-      - name: Show native things
-        shell: sh
-        run: find libs
-      - name: print secret
+      - name: Restore Tools
         shell: cmd
-        run: echo %NUGET_KEY%
+        run: dotnet tool restore
       - name: Build
         shell: cmd
         run: dotnet build -c Release
