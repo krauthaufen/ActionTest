@@ -1,4 +1,4 @@
-﻿namespace Test
+﻿namespace SomeNamespace
 
 open System.Runtime.InteropServices
 

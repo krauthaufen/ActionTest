@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Aardvark Platform Team</Authors>
     <OutputPath>..\..\bin\$(Configuration)</OutputPath>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
