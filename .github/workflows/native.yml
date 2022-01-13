@@ -32,8 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Native Libraries
-        shell: cmd
-        run: buildnative.cmd
+        run: .\buildnative.cmd
       - name: Upload Windows native libs
         uses: actions/upload-artifact@v2
         with:
@@ -59,9 +58,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: windows
-      - name: BuildPackage
-        shell: sh
-        run: dotnet build
       - name: Show native things
         shell: sh
         run: find libs
