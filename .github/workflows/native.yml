@@ -8,7 +8,7 @@ jobs:
     steps:  
       - uses: actions/checkout@v2
       - name: Build Native Libraries
-        run: buildnative.sh
+        run: ./buildnative.sh
       - name: Upload OSX native libs
         uses: actions/upload-artifact@v2
         with:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Native Libraries
-        run: buildnative.sh
+        run: ./buildnative.sh
       - name: Upload Linux native libs
         uses: actions/upload-artifact@v2
         with:
