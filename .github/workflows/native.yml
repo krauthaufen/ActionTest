@@ -80,4 +80,4 @@ jobs:
         env:
           NUGET_KEY: ${{ secrets.NUGET_KEY }}
         shell: cmd
-        run: echo %NUGET_KEY%
+        run: dotnet nuget push "bin/pack/*.nupkg" -k %NUGET_KEY% -s "https://api.nuget.org/v3/index.json"
