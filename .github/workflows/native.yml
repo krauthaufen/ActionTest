@@ -40,7 +40,10 @@ jobs:
           path: libs/Native/windows/
   final:
     name: "Build Package"
-    needs: mac, windows, linux
+    needs: 
+      - mac
+      - windows
+      - linux
     runs-on: ubuntu-latest
     steps:
       - name: Download OSX dependencies
