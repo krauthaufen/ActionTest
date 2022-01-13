@@ -57,8 +57,8 @@ jobs:
           name: windows
       - name: BuildPackage
         shell: sh
-        run dotnet build
+        run: dotnet build
       - name: Show native things
         shell: sh
-        find libs
+        run: find libs
       
