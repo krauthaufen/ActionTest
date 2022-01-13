@@ -5,7 +5,8 @@ jobs:
   mac:
     name: Build OSX dependencies
     runs-on: macos-latest
-    steps:
+    steps:  
+      - uses: actions/checkout@v2
       - name: Build Native Libraries
         run: buildnative.sh
       - name: Upload OSX native libs
@@ -17,6 +18,7 @@ jobs:
     name: Build Linux dependencies
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Build Native Libraries
         run: buildnative.sh
       - name: Upload Linux native libs
@@ -28,6 +30,7 @@ jobs:
     name: Build Windows dependencies
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Build Native Libraries
         run: buildnative.cmd
       - name: Upload Windows native libs
