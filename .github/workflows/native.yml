@@ -66,13 +66,13 @@ jobs:
         shell: sh
         run: find libs
       - name: print secret
-        shell: sh
-        run: echo $NUGET_KEY
+        shell: cmd
+        run: echo %NUGET_KEY%
       - name: Build
-        shell: sh
+        shell: cmd
         run: dotnet build -c Release
       - name: Publish
-        shell: sh
+        shell: cmd
         run: dotnet pack -c Release -o bin\pack
       - name: Upload Package
         uses: actions/upload-artifact@v2
