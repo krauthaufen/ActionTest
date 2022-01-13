@@ -10,5 +10,5 @@ SET(CMAKE_BUILD_TYPE "MinSizeRel" CACHE INTERNAL "release mode")
 
 add_library(Native SHARED test.cpp)
 
-SET(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/../../libs/Native/Test/") 
+SET(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/../../libs/Native/GithubActionTesting/") 
 install(TARGETS Native DESTINATION ${OS}/${ARCH})

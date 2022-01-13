@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30D953C1-E01D-4FD2-AA02-349D290505D5}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Test", "src\Test\Test.fsproj", "{2C52CBBE-AD68-40AC-A8E5-1D4DE70A8946}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Test", "src\GithubActionTesting\GithubActionTesting.fsproj", "{2C52CBBE-AD68-40AC-A8E5-1D4DE70A8946}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

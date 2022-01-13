@@ -4,7 +4,6 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <OutputPath>..\..\bin\$(Configuration)</OutputPath>
-    <PackageId>Github.Action.Test123</PackageId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.fs" />
