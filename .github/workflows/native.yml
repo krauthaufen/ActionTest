@@ -65,4 +65,15 @@ jobs:
       - name: Show native things
         shell: sh
         run: find libs
+      - name: Build
+        shell: sh
+        run: dotnet build -c Release
+      - name: Publish
+        shell: sh
+        run: dotnet pack -c Release -o bin/pack
+      - name: Upload Package
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages
+          path: bin/pack
       
