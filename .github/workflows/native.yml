@@ -13,7 +13,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: osx
-          path: libs/Native/mac/
+          path: libs/Native/Native/mac/
   linux:
     name: Build Linux dependencies
     runs-on: ubuntu-latest
@@ -25,19 +25,20 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: linux
-          path: libs/Native/linux/
+          path: libs/Native/Native/linux/
   windows:
     name: Build Windows dependencies
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build Native Libraries
+        shell: cmd
         run: buildnative.cmd
       - name: Upload Windows native libs
         uses: actions/upload-artifact@v2
         with:
           name: windows
-          path: libs/Native/windows/
+          path: libs/Native/Native/windows/
   final:
     name: "Build Package"
     needs: 
