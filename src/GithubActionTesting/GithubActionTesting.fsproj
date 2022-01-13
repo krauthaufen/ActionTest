@@ -3,7 +3,10 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Aardvark Platform Team</Authors>
     <OutputPath>..\..\bin\$(Configuration)</OutputPath>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/krauthaufen/ActionTest</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.fs" />
