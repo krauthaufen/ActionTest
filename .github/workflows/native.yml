@@ -68,7 +68,7 @@ jobs:
       - name: Build
         shell: cmd
         run: dotnet build -c Release
-      - name: Publish
+      - name: Pack
         shell: cmd
         run: dotnet pack -c Release -o bin\pack
       - name: Upload Package
@@ -76,4 +76,8 @@ jobs:
         with:
           name: packages
           path: bin/pack
-      
+      - name: NuGet
+        env:
+          NUGET_KEY: ${{ secrets.NUGET_KEY }}
+        shell: cmd
+        run: echo %NUGET_KEY%
