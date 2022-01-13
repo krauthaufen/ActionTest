@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   mac:
-    name: Build OSX dependencies
+    name: OSX dependencies
     runs-on: macos-latest
     steps:  
       - uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
           name: osx
           path: libs/Native/
   linux:
-    name: Build Linux dependencies
+    name: Linux dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
           name: linux
           path: libs/Native/
   windows:
-    name: Build Windows dependencies
+    name: Windows dependencies
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -62,9 +62,6 @@ jobs:
         with:
           name: windows
           path: libs/Native/
-      - name: show libs
-        shell: sh
-        run: ls -R libs
       - name: Restore Tools
         shell: cmd
         run: dotnet tool restore
